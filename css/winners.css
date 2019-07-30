@@ -1,0 +1,114 @@
+html{
+  background: #47daeb!important;
+}
+body{
+ position: relative;
+}
+.wrap{
+	width: 100%;
+	padding: 7%;
+	background: #47daeb;
+}
+.wrap .winningPrize{
+	width: 100%;
+}
+.wrap .winningPrize_title{
+    width: 100%;
+}
+.winningPrize_title img{
+  width: 70%;
+}
+.wrap .winnerRank div{
+	margin-top: 10px;
+}
+.wrap .winnerRank .winnerRank_one span,.wrap .winnerRank .winnerRank_two span{
+	 display: inline-block;
+	 font-size: .42rem;	
+	 color: #fff;
+}
+.wrap .winnerRank .firstFew{
+	font-weight: bold;
+	padding-left: 20px;
+}
+/**/
+.wrap .fillBox{
+	width: 100%;
+}
+.wrap .fillBox ul li{
+	margin-top:5%;
+}
+.wrap .fillBox ul li input{
+	width: 100%;
+	border-radius: 10px;
+	font-size: .4rem;
+	padding: 15px;
+}
+.wrap .enterBtn{
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	padding: 15px;
+	font-size: .4rem;
+	color:#fff;
+    background: #ff9f30;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/**/
+.content_text{
+	margin-top: 15%;
+}
+.content_inside {
+  border-radius: 10px;
+  padding: 8% 5% 8% 5%;
+  width: 100%;
+  background: #fff;
+  margin: 0 auto;
+  position: relative;
+}
+.content_inside .imgSign {
+  position: absolute;
+  width: 7%;
+}
+
+.content_inside .imgSign_leftTop {
+  left: 5%;
+  top: 3%;
+}
+
+.content_inside .imgSign_rightTop {
+  top: 3%;
+  right: 5%;
+}
+
+.content_inside .imgSign_leftBottom {
+  bottom: 3%;
+  left: 5%;
+}
+.content_inside .imgSign_rightbottom{
+  bottom: 3%;
+  right: 5%;
+}
+.content_inside_text{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.content_inside_text .content_inside_title{
+  padding: 5px 15px 5px 15px;
+  font-size: .35rem;
+  font-weight: bolder;
+  background: url('../img/gbc.png');
+  background-size: 100% 100%;
+  display: inline-block;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.content_inside_text ul li:nth-child(2) {
+    padding: 5px;
+    padding-left: 0px;
+    word-wrap: break-word;
+}
+.content_inside_text ul{
+	min-height: 100px;
+}

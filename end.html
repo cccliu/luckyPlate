@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,user-scalable=no">
+	<title>抽奖结束</title>
+	<link rel="stylesheet" href="./css/common.css">
+	<link rel="stylesheet" href="./css/fakeLoader.css">
+	<link rel="stylesheet" href="./css/end.css">
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/fakeLoader.min.js"></script>
+	<script src="./js/flexible.js"></script>
+</head>
+
+<body>
+	<div id="endFake"></div>
+	<div class="wrap">
+		<div class="topSection"><img src="./img/endLogo.png" alt=""></div>
+		<div class="content_text">
+			<div class="content_inside">
+				<img class="imgSign imgSign_leftTop" src="./img/sign.png" alt="">
+				<img class="imgSign imgSign_rightTop" src="./img/sign.png" alt="">
+				<img class="imgSign imgSign_leftBottom" src="./img/sign.png" alt="">
+				<img class="imgSign imgSign_rightbottom" src="./img/sign.png" alt="">
+				<div class="content_inside_text">
+					<ul>
+						<li><span class="content_inside_title">活动结束</span></li>
+						<li>
+							<p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+	$(function() {
+		var obj = {
+			init: function() {
+				obj.loading();
+				obj.bind();
+			},
+			bind: function() {
+
+			},
+			loading: function() {
+				$("#endFake").fakeLoader({
+					timeToHide: 1000, //Time in milliseconds for fakeLoader disappear
+					zIndex: 999, // Default zIndex
+					spinner: "spinner2", //Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7' 
+					bgColor: "RGBA(0,0,0,0.6)", //Hex, RGB or RGBA colors
+				});
+			}
+		}
+		obj.init();
+	})
+	</script>
+</body>
+</html>

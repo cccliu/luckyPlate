@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="./css/common.css"/>
+    <link rel="stylesheet" href="./css/share.css"/>
+    <style>
+        html,body,.share{
+            overflow: hidden!important;
+            box-sizing: border-box;
+        }
+       .winningMessage{
+           width: 100%;
+           padding: 5%;
+           box-sizing: border-box;
+       }
+       .winningMessage_box{
+           background: #fff;
+           border-radius: 5px;
+           border: 1px solid #e5e5e5;
+           box-sizing: border-box;
+           overflow: hidden;
+       }
+       .winningMessage_header p{
+           font-size: .38rem;
+           text-align: center;
+           padding: 10px;
+           border-top-left-radius: 5px;
+           border-top-right-radius: 5px;
+           background: #aff5fe;
+           color: #505050;
+           border-bottom: 1px solid #e5e5e5;
+       }
+       .share{
+            box-sizing: border-box;
+       }
+       .share .finger{
+           transform: translate(-300%,40%);
+       }
+       .winningMessage_header ul{
+              overflow: hidden;
+              border-bottom: 1px solid #e5e5e5;
+       }
+       .winningMessage_header ul li{
+           float: left;
+           width: 33.3%;
+           text-align: center;
+           font-size: 0.38rem;
+           padding: 10px;
+           border-right: 1px solid #e5e5e5;
+       }
+       .winningMessage_header ul li:last-child{
+           border-right: 0px solid #e5e5e5;
+       }
+       .winningMessage_content{
+           width: 100%;
+           overflow: hidden;
+           overflow-y: auto;
+           overflow-scrolling: touch;
+           -webkit-overflow-scrolling: touch;
+       }
+       .winningMessage_content ul{
+           overflow: hidden;
+           border-bottom: 1px solid #e5e5e5;
+       }
+       .winningMessage_content ul:last-child{
+           border-bottom: 0px solid #e5e5e5;
+       }
+       .winningMessage_content ul li{
+           float: left;
+           width: 33.3%;
+           text-align: center;
+           font-size: 0.38rem;
+           padding: 10px;
+           border-right: 1px solid #e5e5e5;
+       }
+       .winningMessage_content ul li:last-child{
+           border-right: 0px solid #e5e5e5;
+       }
+    </style>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/flexible.js"></script>
+</head>
+<body style="overflow:hidden">
+   <div class="share">
+       <div class="shareImg">
+           <img src="./img/share.png" alt=""/>
+       </div>
+       <div class="btnImgBox">
+           <img src="./img/czl.png" alt=""/>
+           <img class="finger" src="./img/sz.png" alt=""/>
+       </div>
+       <div class="winningMessage">
+           <div class="winningMessage_box">
+               <div class="winningMessage_header">
+                   <p>中奖信息</p>
+                   <ul><li>姓名</li><li>电话</li><li>奖品</li></ul>
+               </div>
+               <div class="winningMessage_content">
+                    <ul><li>王大明</li><li>15989215864</li><li>小米手机一部</li></ul>
+                    <ul><li>王大明</li><li>15989215864</li><li>小米手机一部</li></ul>
+                    <ul><li>王大明</li><li>15989215864</li><li>小米手机一部</li></ul>
+                    <ul><li>王大明</li><li>15989215864</li><li>小米手机一部</li></ul>
+                    <ul><li>王大明</li><li>15989215864</li><li>小米手机一部</li></ul>
+                    <ul><li>王大明</li><li>15989215864</li><li>小米手机一部</li></ul>
+               </div>
+           </div>
+       </div>
+   </div>
+<script>
+    $(function(){
+              var windowHieght=Math.ceil($(window).height()/5)+'px';
+                 $('.winningMessage_content').height(windowHieght);
+                 $('.share').height($(window).height()+'px');
+    });
+</script>
+</body>
+</html>

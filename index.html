@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,user-scalable=no">
+  <title>抽奖活动</title>
+</head>
+<link rel="stylesheet" href="./css/common.css" />
+<link rel="stylesheet" href="./css/fakeLoader.css">
+<link rel="stylesheet" href="./css/demo.css" />
+<script src="./js/jquery.min.js"></script>
+<script src="./js/flexible.js"></script>
+<script src="./js/fakeLoader.min.js"></script>
+<body>
+  <div class="fakeloader"></div>
+  <div class="wrap">
+    <div class="contentImg">
+      <div class="imgParent">
+        <img class="bigWheel" src="./img/dzb.png" alt="" />
+        <img class="needle" src="./img/start.png" alt="" />
+      </div>
+      <img class="imgBc" src="./img/aperture.png" alt="">
+      <img class="imgEmitter" src="./img/emitter.png" alt="">
+      <img class="ltShivering" src="./img/ltShivering.png" alt="">
+      <img class="rtShivering" src="./img/rtShivering.png" alt="">
+      <img class="bbShivering" src="./img/bbShivering.png" alt="">
+      <img class="imgBigWheel" src="./img/bigWheel.png" alt="">
+    </div>
+    <div class="lotteryNumber">
+      <span class="lotteryNumberPize">抽奖次数:<span>1</span></span>
+    </div>
+    <div class="content_text">
+      <div class="content_inside">
+        <img class="imgSign imgSign_leftTop" src="./img/sign.png" alt="">
+        <img class="imgSign imgSign_rightTop" src="./img/sign.png" alt="">
+        <img class="imgSign imgSign_leftBottom" src="./img/sign.png" alt="">
+        <img class="imgSign imgSign_rightbottom" src="./img/sign.png" alt="">
+        <div class="content_inside_text">
+          <ul>
+            <li><span class="content_inside_title">参与次数</span></li>
+            <li>
+              <p class="lineHeight">每人最多允许抽奖次数:3,每天只能抽1次</p>
+            </li>
+          </ul>
+          <ul>
+            <li><span class="content_inside_title">活动说明</span></li>
+            <li>
+              <p class="lineHeight">
+                亲，请进入大转盘活动页面，祝您好运哦！1、客户中奖后，即不继续参与大转盘活动； 活动时间:2018-06-11至2014-07-18兑奖请将您的姓名+联系方式+收货地址+SN码发送至XXX公众号。如有疑问,请拨打13751747628。
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li><span class="content_inside_title">活动奖项</span></li>
+            <li>
+              <p class="lineHeight"><span class="rank"> 一等奖: 免费送车检5次</span><span class="prizes">奖品数量: 30人</span></p>
+              <p class="lineHeight"><span class="rank"> 二等奖: 免费查看车辆报告</span><span class="prizes">奖品数量: 10人</span></p>
+              <p class="lineHeight"><span class="rank"> 三等奖: 送2个月的洗车保养（限五次）</span><span class="prizes">奖品数量: 20人</span></p>
+              <p class="lineHeight"><span class="rank"> 四等奖: 维修、检测免费过来维修厂喝茶</span><span class="prizes">奖品数量: 40人</span></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--  提示框-->
+   <div class="promptBox">
+       <div class="tip">
+         <div class="tipContent"><img class="xinXiTip" src="./img/xinxi.png" alt=""><span class="tipTitle">温馨提示</span></div>
+         <div><p class="tipResult"></p></div>
+         <div class="tipBtn"><span>知道了</span></div>
+       </div>
+   </div>
+  <script>
+$(function() {
+  var arrs = [{
+      name: '四等奖',
+      angel: 0,
+      percent: 0
+    }, {
+      name: '一等奖',
+      angel: 0,
+      percent: 0
+    }, {
+      name: '三等奖',
+      angel: 0,
+      percent: 0
+    }, {
+      name: '谢谢惠顾',
+      angel: 0,
+      percent: 0
+    }, {
+      name: '三等奖',
+      angel: 0,
+      percent: 0
+    }, {
+      name: '一等奖',
+      angel: 0,
+      percent: 0
+    }, {
+      name: '二等奖',
+      angel: 0,
+      percent: 0
+    }, {
+      name: '谢谢惠顾',
+      angel: 0,
+      percent: 0
+    }, {
+      name: '四等奖',
+      angel: 0,
+      percent: 0
+    }, {
+      name: '二等奖',
+      angel: 0,
+      percent: 0
+    }];
+  var obj = {
+      selTarget: '谢谢惠顾', // 中奖目标
+      target: '',
+      turn: true,
+      request: true,
+      init: function() {
+        obj.loading();
+        obj.probabilityDetail(obj.selTarget);
+        obj.bind();
+        var windowHeight=Math.ceil($(window).height()/3)-35+'px';
+        $('.content_inside_text').height(windowHeight);
+      },
+      bind: function() {
+        $('.tipBtn').on('click',function(){  
+             $('.promptBox').hide().find('.tip').css({'margin-top':'0%'}).find('.tipResult').text('');
+        });
+        $('.imgParent').on('click', '.needle', function() {
+          var count = 0;
+          var angel = 360 / 10;
+              obj.variableSpeedRule((count * angel + angel / 2), obj.target.angel, function() {
+                  obj.turn = true;
+                  obj.request = true;
+                  window.sessionStorage.setItem('messages', JSON.stringify(obj.target));
+                    if(obj.target.name=='谢谢惠顾'){
+                      $('.promptBox').show().find('.tip').animate({'margin-top':'50%'}).find('.tipResult').text('谢谢惠顾');
+                    }else{
+                      window.location.href = "./winners.html";
+                    }
+              });
+        })
+      },
+      post: function(Url, data, callback) {
+        $.ajax({
+          type: 'POST',
+          url: Url,
+          data: data,
+          success: function(res) {
+            callback(res);
+          },
+          error: function(res) {
+      
+          }
+        });
+      },
+      loading: function() {
+        $(".fakeloader").fakeLoader({
+          timeToHide: 1000, //Time in milliseconds for fakeLoader disappear
+          zIndex: 999, // Default zIndex
+          spinner: "spinner2", //Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7' 
+          bgColor: "RGBA(0,0,0,0.6)", //Hex, RGB or RGBA colors
+        });
+      },
+      variableSpeedRule: function(angel, rotateAngel, callback) {
+        if (!obj.turn) {
+            return false;
+        }
+        obj.turn = false;
+        obj.post
+        angel = angel || 0;// 13 
+        angel = 360 - angel;// 347
+        angel += 1440 + rotateAngel; //控制结束角度 1966
+        // 基值（减速）
+        var baseStep = 45;
+        // 起始滚动速度
+        var baseSpeed = 0.5;
+        // 步长
+        var count = 1;
+        var timer = setInterval(function() {
+          if (count == angel) {
+              clearInterval(timer);
+              callback();
+          }                                                        
+          count = count + baseStep * (((angel - count) / angel) > baseSpeed ? baseSpeed : ((angel - count) / angel));
+          if (angel - count < 0.5) {
+            count = angel
+          }
+          $('.bigWheel').css({
+            'transform': 'rotate(' + count + 'deg)'
+          });
+        }, 25);
+      },
+      probabilityDetail: function(name) {
+        $.each(arrs, function(i, item) {
+          item.angel = i * 360 / arrs.length;
+          if (name == item.name) {
+            item.percent = 5;
+          }
+        });
+        obj.target = obj.winningList(arrs);
+        obj.standardMidline(obj.target);
+      },
+      winningList: function(arr) {
+        var percent = Math.random() * 10;
+        var totalPercent = 0;
+        for (var i = 0; i < arr.length; i++) {
+              totalPercent += arr[i].percent;
+          if (percent <= totalPercent) {
+            return arr[i];
+          }
+        }
+      },
+      standardMidline: function(target) { // 微调旋转停止时,转盘角度
+        if (target.angel == 144 || target.angel == 180 || target.angel == 216 ||target.angel == 252) {
+          target.angel = target.angel + 4;
+        }
+      }
+    };
+    obj.init();
+  });
+  </script>
+</body>
+
+</html>

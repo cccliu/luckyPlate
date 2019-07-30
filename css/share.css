@@ -1,0 +1,86 @@
+body,html{
+ background: #47daeb!important;
+}
+.share{
+    width: 100%;
+}
+.share img{
+    width: 100%;
+}
+.spanBtn{
+    text-align: center;
+}
+.btnImgBox{
+    padding: 5%;
+    padding-top: 0;
+    position: relative;
+    padding-bottom: 0px;
+}
+
+.share .finger{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10%;
+    transform: translate(-185%,40%);
+}
+.titleBar{
+    width: 100%;
+}
+/**/
+.content_text{
+    padding: 5%;
+}
+.content_inside {
+    border-radius: 10px;
+    padding: 8% 5% 8% 5%;
+    width: 100%;
+    background: #fff;
+    margin: 0 auto;
+    position: relative;
+}
+.content_inside .imgSign {
+    position: absolute;
+    width: 7%;
+}
+
+.content_inside .imgSign_leftTop {
+    left: 5%;
+    top: 3%;
+}
+
+.content_inside .imgSign_rightTop {
+    top: 3%;
+    right: 5%;
+}
+
+.content_inside .imgSign_leftBottom {
+    bottom: 3%;
+    left: 5%;
+}
+.content_inside .imgSign_rightbottom{
+    bottom: 3%;
+    right: 5%;
+}
+.content_inside_text{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.content_inside_text .content_inside_title{
+    padding: 5px 15px 5px 15px;
+    font-size: .35rem;
+    font-weight: bolder;
+    background: url('../img/gbc.png');
+    background-size: 100% 100%;
+    display: inline-block;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.content_inside_text ul li:nth-child(2) {
+    padding: 5px;
+    padding-left: 0px;
+    word-wrap: break-word;
+}
+.content_inside_text ul{
+    min-height: 100px;
+}

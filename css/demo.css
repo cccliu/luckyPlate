@@ -1,0 +1,192 @@
+html,body{
+  overflow:hidden;
+  overflow-y: hidden!important; 
+  background: #47daeb!important;
+  box-sizing:border-box;
+}
+.wrap {
+  width: 100%;
+  background: #47daeb;
+  padding-bottom: 7%;
+  overflow: hidden!important;
+  box-sizing: border-box;
+}
+
+.contentImg {
+  width: 100%;
+  position: relative;
+}
+
+.imgParent {
+  width: 86%;
+  margin: 0 auto;
+  position: relative;
+  padding: 5%;
+  z-index: 100;
+  padding-top: 3%;
+}
+
+.contentImg .bigWheel {
+  display: block;
+  width: 100%;
+}
+
+.contentImg .needle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 25%;
+  z-index: 200;
+}
+
+.contentImg .imgBc {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.contentImg .imgEmitter {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.contentImg .ltShivering {
+    z-index: 200;
+    position: absolute;
+    left: 0%;
+    top: 32%;
+    width: 46%
+}
+.contentImg .rtShivering{
+    z-index: 200;
+    position: absolute;
+    right: 0%;
+    top: 31%;
+    width: 50%;
+}
+.contentImg .imgBigWheel{
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    width: 80%;
+    transform: translate(-50%,100%);
+    z-index: 200
+}
+.bbShivering{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 300;
+}
+/**/
+.content_title {
+  width: 100%;
+}
+
+.content_title img {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  z-index: 300;
+  margin-top: -3%;
+}
+
+/**/
+.content_text {
+  width: 100%;
+  margin-top: 20%;
+  overflow: hidden;
+}
+
+.content_inside {
+  border-radius: 5px;
+  padding: 5% 5% 5% 5%;
+  width: 85%;
+  background: #fff;
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.content_inside_text{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    overflow: hidden;
+    overflow-y: auto;
+    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+}
+.content_inside .imgSign {
+  position: absolute;
+  width: 7%;
+}
+
+.content_inside .imgSign_leftTop {
+  left: 5%;
+  top: 3%;
+}
+
+.content_inside .imgSign_rightTop {
+  top: 3%;
+  right: 5%;
+}
+
+.content_inside .imgSign_leftBottom {
+  bottom: 3%;
+  left: 5%;
+}
+.content_inside .imgSign_rightbottom{
+  bottom: 3%;
+  right: 5%;
+}
+.content_inside_text .content_inside_title{
+  padding: 5px 15px 5px 15px;
+  font-size: .35rem;
+  font-weight: bolder;
+  background: url('../img/gbc.png');
+  background-size: 100% 100%;
+  display: inline-block;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.content_inside_text ul{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.content_inside_text ul li:nth-child(2){
+    padding: 5px;
+    padding-left: 0px;
+}
+.rank{
+   display: inline-block;
+   min-width: 210px;
+}
+.lineHeight{
+   line-height: .5rem;
+}
+.prizes{
+   margin-left: 5%;
+}
+
+.banScrollbar{
+  overflow: hidden;
+  height: 100%;
+}
+/*1.0*/
+.lotteryNumber{
+    display: none;
+    position: relative;
+}
+.lotteryNumber .lotteryNumberPize{
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    transform: translate(-50%,-30%);
+    color: #fff;
+}
+
